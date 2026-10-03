@@ -1,552 +1,2047 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Vuka Digital | Professional Websites for South African Businesses</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0">
 
-  <meta name="description" content="Vuka Digital creates professional, mobile-friendly websites for South African businesses. Get your business online and reach more customers.">
+  <title>Vuka Digital | Professional Website Design</title>
 
-  <meta name="keywords" content="website design South Africa, website development, business websites, Vuka Digital">
+  <meta
+    name="description"
+    content="Vuka Digital creates affordable, professional and mobile-friendly websites for South African businesses.">
 
-  <meta name="author" content="Vuka Digital">
+  <meta
+    name="keywords"
+    content="Vuka Digital, website design South Africa, business websites, online stores, website development">
 
-  <meta name="robots" content="index, follow">
+  <meta
+    name="author"
+    content="Vuka Digital">
+
+  <meta
+    name="robots"
+    content="index, follow">
+
 
   <style>
+
+    /* =========================
+       RESET
+    ========================= */
+
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f5f5f5;
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+      background: #f5f3ef;
       color: #111;
+
       line-height: 1.6;
     }
 
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      color: inherit;
+    }
+
+
+    /* =========================
+       HEADER
+    ========================= */
+
     header {
-      background: #111;
-      color: white;
-      padding: 18px 6%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
       position: sticky;
       top: 0;
+
       z-index: 1000;
+
+      height: 75px;
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      padding: 0 6%;
+
+      background: rgba(245,243,239,.97);
+
+      border-bottom: 1px solid #ddd;
+
+      backdrop-filter: blur(10px);
     }
 
     .logo {
       font-size: 24px;
-      font-weight: bold;
+      font-weight: 900;
+
+      text-decoration: none;
+
+      letter-spacing: -1px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+
+      gap: 25px;
     }
 
     nav a {
-      color: white;
       text-decoration: none;
-      margin-left: 20px;
+
       font-size: 14px;
+      font-weight: bold;
+
+      transition: opacity .2s ease;
     }
 
+    nav a:hover {
+      opacity: .55;
+    }
+
+    .menu-button {
+      display: none;
+
+      border: none;
+      background: none;
+
+      font-size: 28px;
+
+      cursor: pointer;
+    }
+
+
+    /* =========================
+       HERO
+    ========================= */
+
     .hero {
-      min-height: 85vh;
+      min-height: 90vh;
+
       display: flex;
       align-items: center;
-      justify-content: center;
-      text-align: center;
-      padding: 60px 6%;
-      background: #111;
+
+      padding: 100px 6%;
+
       color: white;
+
+      background:
+        linear-gradient(
+          rgba(0,0,0,.72),
+          rgba(0,0,0,.72)
+        ),
+        linear-gradient(
+          135deg,
+          #222,
+          #555
+        );
+
+      background-size: cover;
+      background-position: center;
     }
 
     .hero-content {
       max-width: 850px;
     }
 
+    .hero-label {
+      display: inline-block;
+
+      margin-bottom: 20px;
+
+      font-size: 13px;
+      font-weight: bold;
+
+      letter-spacing: 3px;
+
+      color: #ddd;
+    }
+
     .hero h1 {
-      font-size: clamp(42px, 9vw, 82px);
-      line-height: 1;
-      margin-bottom: 25px;
+      font-size: clamp(48px, 9vw, 100px);
+
+      line-height: .95;
+
+      letter-spacing: -4px;
+
+      margin-bottom: 30px;
     }
 
     .hero p {
-      font-size: 19px;
-      color: #ddd;
       max-width: 650px;
-      margin: 0 auto 35px;
+
+      color: #ddd;
+
+      font-size: 18px;
+
+      margin-bottom: 35px;
     }
 
-    .buttons {
+    .hero-buttons {
       display: flex;
-      justify-content: center;
-      gap: 15px;
       flex-wrap: wrap;
+
+      gap: 12px;
     }
 
-    .btn {
+    .button {
       display: inline-block;
-      padding: 14px 25px;
+
+      padding: 14px 22px;
+
       border-radius: 6px;
+
       text-decoration: none;
+
       font-weight: bold;
+
+      transition:
+        transform .2s ease,
+        opacity .2s ease;
     }
 
-    .btn-primary {
+    .button:hover {
+      transform: translateY(-2px);
+      opacity: .85;
+    }
+
+    .button-primary {
       background: white;
       color: #111;
     }
 
-    .btn-secondary {
+    .button-secondary {
       border: 1px solid white;
       color: white;
     }
 
+
+    /* =========================
+       GENERAL SECTIONS
+    ========================= */
+
     section {
-      padding: 80px 6%;
+      scroll-margin-top: 80px;
     }
 
     .section-title {
       text-align: center;
-      font-size: 38px;
-      margin-bottom: 45px;
+
+      font-size: clamp(38px, 6vw, 65px);
+
+      line-height: 1;
+
+      letter-spacing: -2px;
+
+      margin-bottom: 35px;
     }
 
-    .services {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 25px;
+
+    /* =========================
+       SERVICES
+    ========================= */
+
+    .services-section {
+      padding: 100px 6%;
+
+      background: #f5f3ef;
+    }
+
+    .services-intro {
+      max-width: 650px;
+
+      margin: -15px auto 50px;
+
+      text-align: center;
+
+      color: #666;
+    }
+
+    .services-grid {
       max-width: 1100px;
+
       margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
     }
 
-    .card {
+    .service-card {
       background: white;
-      padding: 30px;
-      border-radius: 12px;
-      box-shadow: 0 5px 20px rgba(0,0,0,.06);
+
+      padding: 35px;
+
+      border-radius: 14px;
+
+      border: 1px solid #e5e5e5;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
     }
 
-    .card h3 {
+    .service-card:hover {
+      transform: translateY(-6px);
+
+      box-shadow:
+        0 15px 35px rgba(0,0,0,.1);
+    }
+
+    .service-number {
+      font-size: 13px;
+
+      font-weight: bold;
+
+      color: #888;
+
+      margin-bottom: 25px;
+    }
+
+    .service-card h3 {
+      font-size: 25px;
+
       margin-bottom: 12px;
-      font-size: 22px;
     }
 
-    .card p {
-      color: #555;
+    .service-card p {
+      color: #666;
+
+      font-size: 14px;
     }
 
-    .portfolio {
+
+    /* =========================
+       PRICING
+    ========================= */
+
+    .pricing-section {
+      padding: 100px 6%;
+
       background: #111;
+
       color: white;
     }
 
-    .portfolio .card {
-      color: #111;
+    .pricing-intro {
+      max-width: 650px;
+
+      margin: -15px auto 50px;
+
+      text-align: center;
+
+      color: #aaa;
     }
 
-    .process {
-      max-width: 900px;
+    .pricing-grid {
+      max-width: 1100px;
+
       margin: auto;
+
       display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .price-card {
+      background: white;
+
+      color: #111;
+
+      padding: 35px;
+
+      border-radius: 14px;
+
+      position: relative;
+    }
+
+    .price-card.featured {
+      border: 3px solid #111;
+
+      transform: translateY(-8px);
+    }
+
+    .price-badge {
+      display: inline-block;
+
+      background: #111;
+
+      color: white;
+
+      padding: 6px 10px;
+
+      border-radius: 20px;
+
+      font-size: 10px;
+
+      font-weight: bold;
+
+      text-transform: uppercase;
+
+      margin-bottom: 15px;
+    }
+
+    .price-card h3 {
+      font-size: 25px;
+
+      margin-bottom: 10px;
+    }
+
+    .price {
+      font-size: 38px;
+
+      font-weight: 900;
+
+      margin-bottom: 20px;
+    }
+
+    .price-card ul {
+      list-style: none;
+
+      margin-bottom: 25px;
+    }
+
+    .price-card li {
+      padding: 8px 0;
+
+      border-bottom: 1px solid #eee;
+
+      font-size: 14px;
+    }
+
+    .price-button {
+      display: block;
+
+      text-align: center;
+
+      background: #111;
+
+      color: white;
+
+      padding: 13px;
+
+      border-radius: 6px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+    }
+
+
+    /* =========================
+       WHY CHOOSE US
+    ========================= */
+
+    .why-section {
+      padding: 100px 6%;
+
+      background: #f5f3ef;
+    }
+
+    .why-grid {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
       gap: 20px;
     }
 
-    .step {
+    .why-card {
       background: white;
-      padding: 25px;
-      border-radius: 10px;
+
+      padding: 30px;
+
+      border-radius: 12px;
     }
 
-    .contact {
+    .why-card h3 {
+      font-size: 20px;
+
+      margin-bottom: 10px;
+    }
+
+    .why-card p {
+      color: #666;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       PORTFOLIO
+    ========================= */
+
+    .portfolio {
+      background: #111;
+
+      color: white;
+
+      padding: 100px 6%;
+    }
+
+    .portfolio-intro {
+      max-width: 650px;
+
+      margin: -20px auto 50px;
+
+      text-align: center;
+
+      color: #aaa;
+    }
+
+    .portfolio-grid {
+      max-width: 1150px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap: 25px;
+    }
+
+    .portfolio-card {
+      display: block;
+
+      background: white;
+
+      color: #111;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      text-decoration: none;
+
+      box-shadow:
+        0 10px 30px rgba(0,0,0,.25);
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-8px);
+
+      box-shadow:
+        0 18px 40px rgba(0,0,0,.35);
+    }
+
+    .portfolio-preview {
+      height: 220px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      overflow: hidden;
+    }
+
+    .portfolio-preview span {
+      font-size: 30px;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
       text-align: center;
     }
 
-    .contact p {
-      margin-bottom: 25px;
-      color: #555;
+    .leparadise-preview {
+      background:
+        linear-gradient(
+          rgba(0,0,0,.55),
+          rgba(0,0,0,.55)
+        ),
+        linear-gradient(
+          135deg,
+          #333,
+          #111
+        );
+
+      color: white;
     }
+
+    .pharmacy-preview {
+      background:
+        linear-gradient(
+          135deg,
+          #f5f5f5,
+          #ddd
+        );
+
+      color: #111;
+    }
+
+    .vuka-preview {
+      background:
+        linear-gradient(
+          135deg,
+          #222,
+          #000
+        );
+
+      color: white;
+    }
+
+    .portfolio-content {
+      padding: 28px;
+    }
+
+    .portfolio-label {
+      display: inline-block;
+
+      margin-bottom: 10px;
+
+      font-size: 11px;
+
+      font-weight: bold;
+
+      text-transform: uppercase;
+
+      letter-spacing: 1px;
+
+      color: #777;
+    }
+
+    .portfolio-content h3 {
+      font-size: 25px;
+
+      margin-bottom: 12px;
+    }
+
+    .portfolio-content p {
+      color: #555;
+
+      font-size: 14px;
+
+      margin-bottom: 20px;
+    }
+
+    .portfolio-link {
+      font-weight: bold;
+
+      font-size: 14px;
+
+      color: #111;
+    }
+
+
+    /* =========================
+       HOW IT WORKS
+    ========================= */
+
+    .process-section {
+      padding: 100px 6%;
+
+      background: #f5f3ef;
+    }
+
+    .process-grid {
+      max-width: 1100px;
+
+      margin: auto;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 20px;
+    }
+
+    .process-card {
+      background: white;
+
+      padding: 30px;
+
+      border-radius: 12px;
+    }
+
+    .process-number {
+      font-size: 35px;
+
+      font-weight: 900;
+
+      margin-bottom: 15px;
+
+      color: #bbb;
+    }
+
+    .process-card h3 {
+      margin-bottom: 10px;
+    }
+
+    .process-card p {
+      color: #666;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       FAQ
+    ========================= */
+
+    .faq-section {
+      padding: 100px 6%;
+
+      background: white;
+    }
+
+    .faq-container {
+      max-width: 850px;
+
+      margin: auto;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ddd;
+
+      padding: 22px 0;
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+
+      font-weight: bold;
+
+      font-size: 17px;
+    }
+
+    .faq-item p {
+      padding-top: 15px;
+
+      color: #666;
+
+      font-size: 14px;
+    }
+
+
+    /* =========================
+       CONTACT
+    ========================= */
+
+    .contact-section {
+      padding: 100px 6%;
+
+      background: #111;
+
+      color: white;
+
+      text-align: center;
+    }
+
+    .contact-section p {
+      max-width: 650px;
+
+      margin: 0 auto 35px;
+
+      color: #aaa;
+    }
+
+    .contact-buttons {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 12px;
+    }
+
+    .contact-button {
+      display: inline-block;
+
+      padding: 14px 22px;
+
+      border-radius: 6px;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      background: white;
+
+      color: #111;
+    }
+
+    .contact-button.dark {
+      background: transparent;
+
+      color: white;
+
+      border: 1px solid white;
+    }
+
+
+    /* =========================
+       FOOTER
+    ========================= */
 
     footer {
       background: #111;
+
       color: white;
+
       text-align: center;
-      padding: 35px 6%;
+
+      padding: 60px 6%;
+
+      border-top: 1px solid #333;
+    }
+
+    .footer-logo {
+      font-size: 30px;
+
+      font-weight: bold;
+
+      font-style: italic;
+
+      margin-bottom: 20px;
     }
 
     footer p {
       color: #aaa;
-      font-size: 14px;
+
+      font-size: 12px;
     }
 
-    @media (max-width: 800px) {
+    .footer-links {
+      display: flex;
+
+      justify-content: center;
+
+      flex-wrap: wrap;
+
+      gap: 20px;
+
+      margin: 20px 0;
+    }
+
+    .footer-links a {
+      color: #aaa;
+
+      text-decoration: none;
+
+      font-size: 13px;
+    }
+
+
+    /* =========================
+       FLOATING CONTACT
+    ========================= */
+
+    .contact-float {
+      position: fixed;
+
+      right: 18px;
+
+      bottom: 18px;
+
+      z-index: 2000;
+
+      display: flex;
+
+      flex-direction: column;
+
+      gap: 10px;
+    }
+
+    .contact-float a {
+      display: block;
+
+      padding: 12px 18px;
+
+      background: #111;
+
+      color: white;
+
+      text-decoration: none;
+
+      font-weight: bold;
+
+      font-size: 13px;
+
+      border-radius: 30px;
+
+      box-shadow:
+        0 5px 15px rgba(0,0,0,.25);
+    }
+
+    .contact-float a:hover {
+      opacity: .8;
+    }
+
+
+    /* =========================
+       MOBILE MENU
+    ========================= */
+
+    @media (max-width: 900px) {
+
       nav {
+        position: absolute;
+
+        top: 75px;
+
+        left: 0;
+
+        width: 100%;
+
+        background: #f5f3ef;
+
         display: none;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 0;
+
+        border-bottom: 1px solid #ddd;
       }
 
-      .services {
-        grid-template-columns: 1fr;
+      nav.active {
+        display: flex;
+      }
+
+      nav a {
+        width: 100%;
+
+        padding: 16px 6%;
+
+        border-top: 1px solid #ddd;
+      }
+
+      .menu-button {
+        display: block;
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .why-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .process-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+    }
+
+
+    /* =========================
+       SMALL MOBILE
+    ========================= */
+
+    @media (max-width: 600px) {
+
+      header {
+        padding: 0 5%;
+      }
+
+      .logo {
+        font-size: 21px;
       }
 
       .hero {
-        min-height: 75vh;
+        min-height: 80vh;
+
+        padding: 80px 6%;
       }
 
       .hero h1 {
-        font-size: 48px;
+        letter-spacing: -2px;
       }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+
+        align-items: stretch;
+      }
+
+      .button {
+        text-align: center;
+      }
+
+      .services-section,
+      .pricing-section,
+      .why-section,
+      .portfolio,
+      .process-section,
+      .faq-section,
+      .contact-section {
+        padding: 75px 6%;
+      }
+
+      .services-grid,
+      .pricing-grid,
+      .why-grid,
+      .portfolio-grid,
+      .process-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .portfolio-preview {
+        height: 200px;
+      }
+
+      .portfolio-preview span {
+        font-size: 26px;
+      }
+
+      .contact-float {
+        right: 12px;
+
+        bottom: 12px;
+      }
+
+      .contact-float a {
+        padding: 10px 15px;
+
+        font-size: 12px;
+      }
+
     }
+
   </style>
+
 </head>
+
 
 <body>
 
-<header>
-  <div class="logo">Vuka Digital</div>
 
-  <nav>
-    <a href="#services">Services</a>
-    <a href="#portfolio">Portfolio</a>
-    <a href="#process">How It Works</a>
-    <a href="#contact">Contact</a>
-  </nav>
-</header>
+  <!-- =========================
+       HEADER
+  ========================= -->
 
-<section class="hero">
-  <div class="hero-content">
+  <header>
 
-    <h1>Professional Websites for South African Businesses</h1>
+    <a
+      href="#home"
+      class="logo">
+      Vuka Digital
+    </a>
+
+    <button
+      class="menu-button"
+      onclick="toggleMenu()"
+      aria-label="Open navigation menu">
+      ☰
+    </button>
+
+    <nav id="mainNav">
+
+      <a href="#home" onclick="closeMenu()">
+        Home
+      </a>
+
+      <a href="#services" onclick="closeMenu()">
+        Services
+      </a>
+
+      <a href="#pricing" onclick="closeMenu()">
+        Pricing
+      </a>
+
+      <a href="#portfolio" onclick="closeMenu()">
+        Portfolio
+      </a>
+
+      <a href="#process" onclick="closeMenu()">
+        How It Works
+      </a>
+
+      <a href="#faq" onclick="closeMenu()">
+        FAQ
+      </a>
+
+      <a href="#contact" onclick="closeMenu()">
+        Contact
+      </a>
+
+    </nav>
+
+  </header>
+
+
+
+  <!-- =========================
+       HERO
+  ========================= -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="hero-content">
+
+        <span class="hero-label">
+          VUKA DIGITAL
+        </span>
+
+        <h1>
+          Professional Websites
+          for South African Businesses
+        </h1>
+
+        <p>
+          We create modern, mobile-friendly and affordable
+          websites that help businesses build a professional
+          online presence.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a
+            href="https://wa.me/27712201955?text=Hi%20Vuka%20Digital,%20I%20am%20interested%20in%20getting%20a%20website."
+            target="_blank"
+            rel="noopener"
+            class="button button-primary">
+            Get Your Website
+          </a>
+
+          <a
+            href="#portfolio"
+            class="button button-secondary">
+            View Our Work
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         SERVICES
+    ========================= -->
+
+    <section
+      id="services"
+      class="services-section">
+
+      <h2 class="section-title">
+        Our Services
+      </h2>
+
+      <p class="services-intro">
+        Simple digital solutions designed to help
+        South African businesses grow online.
+      </p>
+
+      <div class="services-grid">
+
+
+        <div class="service-card">
+
+          <div class="service-number">
+            01
+          </div>
+
+          <h3>
+            Business Websites
+          </h3>
+
+          <p>
+            Professional websites for businesses,
+            entrepreneurs, professionals and organisations.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-number">
+            02
+          </div>
+
+          <h3>
+            Online Stores
+          </h3>
+
+          <p>
+            Modern ecommerce websites designed
+            to showcase products and help businesses sell online.
+          </p>
+
+        </div>
+
+
+        <div class="service-card">
+
+          <div class="service-number">
+            03
+          </div>
+
+          <h3>
+            Website Maintenance
+          </h3>
+
+          <p>
+            Need changes after your website goes live?
+            We can help keep your website updated.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PRICING
+    ========================= -->
+
+    <section
+      id="pricing"
+      class="pricing-section">
+
+      <h2 class="section-title">
+        Website Packages
+      </h2>
+
+      <p class="pricing-intro">
+        Affordable starting packages for businesses
+        that want to establish a professional online presence.
+      </p>
+
+      <div class="pricing-grid">
+
+
+        <div class="price-card">
+
+          <h3>
+            Starter Website
+          </h3>
+
+          <div class="price">
+            From R1,500
+          </div>
+
+          <ul>
+
+            <li>
+              ✓ Professional design
+            </li>
+
+            <li>
+              ✓ Mobile-friendly layout
+            </li>
+
+            <li>
+              ✓ Up to 3 main sections/pages
+            </li>
+
+            <li>
+              ✓ Contact information
+            </li>
+
+            <li>
+              ✓ WhatsApp button
+            </li>
+
+          </ul>
+
+          <a
+            href="https://wa.me/27712201955?text=Hi%20Vuka%20Digital,%20I%20am%20interested%20in%20the%20Starter%20Website%20package."
+            target="_blank"
+            rel="noopener"
+            class="price-button">
+            Get Started
+          </a>
+
+        </div>
+
+
+        <div class="price-card featured">
+
+          <span class="price-badge">
+            Popular
+          </span>
+
+          <h3>
+            Business Website
+          </h3>
+
+          <div class="price">
+            From R2,500
+          </div>
+
+          <ul>
+
+            <li>
+              ✓ Professional custom design
+            </li>
+
+            <li>
+              ✓ Mobile responsive
+            </li>
+
+            <li>
+              ✓ Multiple pages
+            </li>
+
+            <li>
+              ✓ Contact form
+            </li>
+
+            <li>
+              ✓ WhatsApp integration
+            </li>
+
+            <li>
+              ✓ Basic SEO setup
+            </li>
+
+          </ul>
+
+          <a
+            href="https://wa.me/27712201955?text=Hi%20Vuka%20Digital,%20I%20am%20interested%20in%20the%20Business%20Website%20package."
+            target="_blank"
+            rel="noopener"
+            class="price-button">
+            Get Started
+          </a>
+
+        </div>
+
+
+        <div class="price-card">
+
+          <h3>
+            Online Store
+          </h3>
+
+          <div class="price">
+            From R4,000
+          </div>
+
+          <ul>
+
+            <li>
+              ✓ Ecommerce design
+            </li>
+
+            <li>
+              ✓ Product showcase
+            </li>
+
+            <li>
+              ✓ Mobile responsive
+            </li>
+
+            <li>
+              ✓ Shopping functionality
+            </li>
+
+            <li>
+              ✓ Contact & WhatsApp
+            </li>
+
+          </ul>
+
+          <a
+            href="https://wa.me/27712201955?text=Hi%20Vuka%20Digital,%20I%20am%20interested%20in%20the%20Online%20Store%20package."
+            target="_blank"
+            rel="noopener"
+            class="price-button">
+            Get Started
+          </a>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         WHY CHOOSE VUKA
+    ========================= -->
+
+    <section
+      class="why-section">
+
+      <h2 class="section-title">
+        Why Choose Vuka Digital?
+      </h2>
+
+      <div class="why-grid">
+
+
+        <div class="why-card">
+
+          <h3>
+            Mobile First
+          </h3>
+
+          <p>
+            Your website is designed to work
+            properly on phones, tablets and computers.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <h3>
+            Built for South Africa
+          </h3>
+
+          <p>
+            We focus on practical websites and
+            digital solutions for South African businesses.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <h3>
+            Easy Communication
+          </h3>
+
+          <p>
+            Contact us directly through WhatsApp
+            or email whenever you need assistance.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <h3>
+            Fast & Professional
+          </h3>
+
+          <p>
+            We focus on clean designs, clear communication
+            and efficient website development.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <h3>
+            Affordable Packages
+          </h3>
+
+          <p>
+            Our starting packages are designed to make
+            professional websites more accessible.
+          </p>
+
+        </div>
+
+
+        <div class="why-card">
+
+          <h3>
+            Website Support
+          </h3>
+
+          <p>
+            Need changes after launch?
+            We can help maintain and update your website.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         PORTFOLIO
+    ========================= -->
+
+    <section
+      id="portfolio"
+      class="portfolio">
+
+      <h2 class="section-title">
+        Our Work
+      </h2>
+
+      <p class="portfolio-intro">
+        Explore selected website projects and demos
+        created by Vuka Digital.
+      </p>
+
+      <div class="portfolio-grid">
+
+
+        <!-- LEPARADISE -->
+
+        <a
+          href="https://leparadiseofficial.github.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="portfolio-card">
+
+          <div
+            class="portfolio-preview leparadise-preview">
+
+            <span>
+              LEPARADISE
+            </span>
+
+          </div>
+
+          <div class="portfolio-content">
+
+            <span class="portfolio-label">
+              Demo Project
+            </span>
+
+            <h3>
+              LeParadise
+            </h3>
+
+            <p>
+              A modern streetwear website designed
+              to showcase clothing products and create
+              a strong online brand presence.
+            </p>
+
+            <span class="portfolio-link">
+              View Project →
+            </span>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- CAREPOINT -->
+
+        <a
+          href="#contact"
+          class="portfolio-card">
+
+          <div
+            class="portfolio-preview pharmacy-preview">
+
+            <span>
+              CAREPOINT
+            </span>
+
+          </div>
+
+          <div class="portfolio-content">
+
+            <span class="portfolio-label">
+              Demo Project
+            </span>
+
+            <h3>
+              CarePoint Pharmacy
+            </h3>
+
+            <p>
+              A professional pharmacy website concept
+              designed to present services, products
+              and important information.
+            </p>
+
+            <span class="portfolio-link">
+              Request Similar Website →
+            </span>
+
+          </div>
+
+        </a>
+
+
+
+        <!-- VUKA DIGITAL -->
+
+        <a
+          href="#home"
+          class="portfolio-card">
+
+          <div
+            class="portfolio-preview vuka-preview">
+
+            <span>
+              VUKA DIGITAL
+            </span>
+
+          </div>
+
+          <div class="portfolio-content">
+
+            <span class="portfolio-label">
+              Current Project
+            </span>
+
+            <h3>
+              Vuka Digital
+            </h3>
+
+            <p>
+              The official Vuka Digital website,
+              created to showcase our services,
+              packages and website development work.
+            </p>
+
+            <span class="portfolio-link">
+              View Website →
+            </span>
+
+          </div>
+
+        </a>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         HOW IT WORKS
+    ========================= -->
+
+    <section
+      id="process"
+      class="process-section">
+
+      <h2 class="section-title">
+        How It Works
+      </h2>
+
+      <div class="process-grid">
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            01
+          </div>
+
+          <h3>
+            Tell Us What You Need
+          </h3>
+
+          <p>
+            Contact us and explain what type of
+            website you want for your business.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            02
+          </div>
+
+          <h3>
+            We Build Your Website
+          </h3>
+
+          <p>
+            We design and develop your website
+            according to your requirements.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            03
+          </div>
+
+          <h3>
+            Review
+          </h3>
+
+          <p>
+            You review the website and request
+            any agreed changes.
+          </p>
+
+        </div>
+
+
+        <div class="process-card">
+
+          <div class="process-number">
+            04
+          </div>
+
+          <h3>
+            Go Live
+          </h3>
+
+          <p>
+            Once everything is ready, your website
+            can be published online.
+          </p>
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         FAQ
+    ========================= -->
+
+    <section
+      id="faq"
+      class="faq-section">
+
+      <h2 class="section-title">
+        Frequently Asked Questions
+      </h2>
+
+      <div class="faq-container">
+
+
+        <details class="faq-item">
+
+          <summary>
+            How much does a website cost?
+          </summary>
+
+          <p>
+            Our website packages start from R1,500.
+            The final price depends on the number of
+            pages, features and requirements.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            How long does a website take?
+          </summary>
+
+          <p>
+            Simple business websites can often be
+            completed within a few days, depending on
+            the content, requirements and requested changes.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            Will my website work on a phone?
+          </summary>
+
+          <p>
+            Yes. Our websites are designed to be
+            responsive and usable on phones, tablets
+            and desktop computers.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            Can I contact Vuka Digital on WhatsApp?
+          </summary>
+
+          <p>
+            Yes. WhatsApp is one of the easiest ways
+            to contact us about a website project.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            Can you update my website later?
+          </summary>
+
+          <p>
+            Yes. We can help with website updates,
+            changes and maintenance after your website
+            has been published.
+          </p>
+
+        </details>
+
+
+        <details class="faq-item">
+
+          <summary>
+            Do I need to know coding?
+          </summary>
+
+          <p>
+            No. You simply tell us what your business
+            needs and we handle the website development.
+          </p>
+
+        </details>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- =========================
+         CONTACT
+    ========================= -->
+
+    <section
+      id="contact"
+      class="contact-section">
+
+      <h2 class="section-title">
+        Let's Build Your Website
+      </h2>
+
+      <p>
+        Ready to take your business online?
+        Contact Vuka Digital today and tell us
+        what you need.
+      </p>
+
+      <div class="contact-buttons">
+
+        <a
+          href="https://wa.me/27712201955?text=Hi%20Vuka%20Digital,%20I%20would%20like%20to%20discuss%20a%20website."
+          target="_blank"
+          rel="noopener"
+          class="contact-button">
+          WhatsApp Us
+        </a>
+
+        <a
+          href="mailto:thatomalete6@gmail.com?subject=Website%20Enquiry"
+          class="contact-button dark">
+          Email Us
+        </a>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+
+  <!-- =========================
+       FOOTER
+  ========================= -->
+
+  <footer>
+
+    <div class="footer-logo">
+      Vuka Digital
+    </div>
 
     <p>
-      We create modern, mobile-friendly websites that help businesses
-      get online, look professional and connect with more customers.
+      Professional website design for South African businesses.
     </p>
 
-    <div class="buttons">
-      <a class="btn btn-primary"
-         href="https://wa.me/27712201955?text=Hi%20Vuka%20Digital,%20I%20am%20interested%20in%20getting%20a%20website.">
-        Get Your Website
+    <div class="footer-links">
+
+      <a href="#home">
+        Home
       </a>
 
-      <a class="btn btn-secondary" href="#portfolio">
-        View Our Work
+      <a href="#services">
+        Services
       </a>
+
+      <a href="#pricing">
+        Pricing
+      </a>
+
+      <a href="#portfolio">
+        Portfolio
+      </a>
+
+      <a href="#faq">
+        FAQ
+      </a>
+
+      <a href="#contact">
+        Contact
+      </a>
+
     </div>
 
-  </div>
-</section>
+    <p>
+      © 2026 Vuka Digital. All rights reserved.
+    </p>
 
-<section id="services">
+  </footer>
 
-  <h2 class="section-title">Our Services</h2>
 
-  <div class="services">
 
-    <div class="card">
-      <h3>Business Websites</h3>
-      <p>
-        Professional websites designed to help your business
-        establish a strong online presence.
-      </p>
-    </div>
+  <!-- =========================
+       FLOATING CONTACT BUTTONS
+  ========================= -->
 
-    <div class="card">
-      <h3>Online Stores</h3>
-      <p>
-        Modern online stores with products, shopping carts
-        and payment options.
-      </p>
-    </div>
+  <div class="contact-float">
 
-    <div class="card">
-      <h3>Website Maintenance</h3>
-      <p>
-        We can update your website, change content, add products
-        and keep your website running.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-  <section id="pricing">
-
-  <h2 class="section-title">Website Packages</h2>
-
-  <div class="services">
-
-    <div class="card">
-      <h3>Starter Website</h3>
-      <p>Perfect for small businesses that need a professional online presence.</p>
-      <h2>From R1,500</h2>
-      <p>✓ 1–5 pages<br>
-      ✓ Mobile-friendly design<br>
-      ✓ WhatsApp button<br>
-      ✓ Contact information<br>
-      ✓ Google-ready setup</p>
-    </div>
-
-    <div class="card">
-      <h3>Business Website</h3>
-      <p>A complete professional website designed to help your business grow.</p>
-      <h2>From R2,500</h2>
-      <p>✓ Up to 8 pages<br>
-      ✓ Mobile-friendly design<br>
-      ✓ WhatsApp integration<br>
-      ✓ Contact form<br>
-      ✓ SEO setup<br>
-      ✓ Social media links</p>
-    </div>
-
-    <div class="card">
-      <h3>Online Store</h3>
-      <p>For businesses that want to showcase and sell products online.</p>
-      <h2>From R4,000</h2>
-      <p>✓ Product pages<br>
-      ✓ Shopping cart<br>
-      ✓ Payment integration<br>
-      ✓ Mobile-friendly design<br>
-      ✓ WhatsApp integration<br>
-      ✓ Basic SEO
-      </p>
-    </div>
-
-  </div>
-
-  </section>
-
-  <section id="why-us">
-
-  <h2 class="section-title">Why Choose Vuka Digital?</h2>
-
-  <div class="services">
-
-    <div class="card">
-      <h3>📱 Mobile First</h3>
-      <p>
-        Your website is designed to look professional
-        and work smoothly on phones, tablets and computers.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>🇿🇦 Built for South Africa</h3>
-      <p>
-        We create websites suited to South African
-        businesses and their customers.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>💬 Easy Communication</h3>
-      <p>
-        Contact us directly through WhatsApp or email
-        when you need help with your website.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>🚀 Fast & Professional</h3>
-      <p>
-        We focus on clean, modern websites that help
-        businesses establish their online presence.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>💰 Affordable Packages</h3>
-      <p>
-        Choose a website package that matches your
-        business needs and budget.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>🔧 Website Support</h3>
-      <p>
-        Need changes after your website launches?
-        Vuka Digital can help maintain and update it.
-      </p>
-    </div>
-
-  </div>
-
-  </section>
-
-<section id="portfolio" class="portfolio">
-
-  <h2 class="section-title">Our Work</h2>
-
-  <div class="services">
-
-    <div class="card">
-      <h3>LeParadise</h3>
-      <p>
-        Clothing and streetwear website project.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Business Websites</h3>
-      <p>
-        Modern websites created for growing businesses.
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Online Stores</h3>
-      <p>
-        Ecommerce websites designed to showcase and sell products.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-<section id="process">
-
-  <h2 class="section-title">How It Works</h2>
-
-  <div class="process">
-
-    <div class="step">
-      <h3>01 — Tell Us What You Need</h3>
-      <p>
-        Contact Vuka Digital and tell us about your business
-        and the type of website you want.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>02 — We Build Your Website</h3>
-      <p>
-        We design and develop a professional website
-        that works on phones, tablets and computers.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>03 — Review</h3>
-      <p>
-        You review the website and request any changes
-        before launch.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>04 — Go Live</h3>
-      <p>
-        Your website is published online and ready
-        for your customers.
-      </p>
-    </div>
-
-  </div>
-
-</section>
-
-  <section id="faq">
-
-  <h2 class="section-title">Frequently Asked Questions</h2>
-
-  <div class="process">
-
-    <div class="step">
-      <h3>How much does a website cost?</h3>
-      <p>
-        Our website packages start from R1,500.
-        The final price depends on the features and
-        requirements of your business.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>How long does it take?</h3>
-      <p>
-        Most simple business websites can be completed
-        within a few days, depending on the amount of
-        content and changes required.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Will my website work on a phone?</h3>
-      <p>
-        Yes. Our websites are designed to work on
-        phones, tablets and computers.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Can I contact Vuka Digital on WhatsApp?</h3>
-      <p>
-        Yes. You can contact us directly on WhatsApp
-        to discuss your website requirements.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Can you update my website later?</h3>
-      <p>
-        Yes. Vuka Digital can help with website updates,
-        content changes, new products and maintenance.
-      </p>
-    </div>
-
-    <div class="step">
-      <h3>Do I need to know anything about coding?</h3>
-      <p>
-        No. We handle the website development so you
-        can focus on running your business.
-      </p>
-    </div>
-
-  </div>
-
-      </section>
-
-<section id="contact" class="contact">
-
-  <h2 class="section-title">Ready to Get Online?</h2>
-
-  <p>
-    Contact Vuka Digital today and let's build your website.
-  </p>
-
-  <div class="buttons">
-
-    <a class="btn btn-primary"
-       href="https://wa.me/27712201955?text=Hi%20Vuka%20Digital,%20I%20want%20to%20create%20a%20website.">
-      WhatsApp Us
+    <a
+      href="https://wa.me/27712201955?text=Hi%20Vuka%20Digital,%20I%20am%20interested%20in%20getting%20a%20website."
+      target="_blank"
+      rel="noopener"
+      aria-label="Contact Vuka Digital on WhatsApp">
+      WhatsApp
     </a>
 
-    <a class="btn btn-secondary"
-       href="mailto:thatomalete6@gmail.com">
-      Email Us
+    <a
+      href="mailto:thatomalete6@gmail.com?subject=Website%20Enquiry"
+      aria-label="Email Vuka Digital">
+      Email
     </a>
 
   </div>
 
-</section>
 
-<footer>
 
-  <h3>Vuka Digital</h3>
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
-  <p>
-    Professional website design for South African businesses.
-  </p>
+  <script>
 
-  <p>
-    © 2026 Vuka Digital. All rights reserved.
-  </p>
+    function toggleMenu() {
 
-</footer>
+      const nav =
+        document.getElementById("mainNav");
+
+      nav.classList.toggle("active");
+
+    }
+
+
+    function closeMenu() {
+
+      const nav =
+        document.getElementById("mainNav");
+
+      nav.classList.remove("active");
+
+    }
+
+
+    /* Close mobile menu when clicking outside */
+
+    document.addEventListener(
+      "click",
+      function(event) {
+
+        const nav =
+          document.getElementById("mainNav");
+
+        const menuButton =
+          document.querySelector(".menu-button");
+
+        if (
+          nav.classList.contains("active") &&
+          !nav.contains(event.target) &&
+          !menuButton.contains(event.target)
+        ) {
+
+          nav.classList.remove("active");
+
+        }
+
+      }
+    );
+
+
+  </script>
+
 
 </body>
+
   </html>
